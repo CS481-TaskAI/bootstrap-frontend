@@ -2,9 +2,9 @@ import React from "react";
 
 function accountInfo(){
     return(
-        <div>
+        <text>
             THIS IS ACCOUNT INFO PAGE
-        </div>
+        </text>
     );
 }
 

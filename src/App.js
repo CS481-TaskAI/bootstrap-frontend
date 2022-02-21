@@ -5,15 +5,14 @@ import home from './Pages/home';
 import accountInfo from './Pages/accountInfo';
 
 function App() {
-  return (
-    <Router>
+  return <Router>
       <Routes>
-        <Route exact path="/" element={login} />
-        <Route path="/home" element={home} />
-        <Route path="/accountInfo" element={accountInfo} />
+        <Route exact path="/" element={<login />} />
+        <Route path="/home" element={<home />} />
+        <Route path="/accountInfo" element={<accountInfo />} />
       </Routes>
-    </Router>
-  );
+    </Router>;
+  
 }
 
 export default App;
