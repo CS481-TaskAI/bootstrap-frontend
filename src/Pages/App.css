@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Saira:wght@100&display=swap');
+
 .App {
   text-align: center;
 }
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ae2012;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +37,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+text{
+  font-family: 'Rubik', sans-serif;
+}
+
+container{
+  width: 1500px;
+  height: 1500px;
 }
