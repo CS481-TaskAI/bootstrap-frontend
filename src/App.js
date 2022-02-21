@@ -1,20 +1,24 @@
-import {Button, Container, Row, Col} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import home from './Pages/home';
-import profile from './Pages/profile';
-import login from './Pages/login';
-
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  return (<Router>
-      <Routes>
-        <Route path="/" element={<login />} />
-        <Route path="/home" element={<home />} />
-        <Route path="/profile" element={<profile />} />
-      </Routes>
-  </Router>
-    
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
