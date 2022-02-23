@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 function login(){
     return(
         <>
@@ -21,7 +23,7 @@ function login(){
                             <Form.Control type="password" placeholder="Password" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Check me out" />
+                            <Form.Check type="checkbox" label="Remember Me" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Submit
