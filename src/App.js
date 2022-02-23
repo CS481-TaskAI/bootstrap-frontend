@@ -1,15 +1,15 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import login from './Pages/login';
-import home from './Pages/home';
-import accountInfo from './Pages/accountInfo';
+import Login from './Pages/login';
+import Home from './Pages/home';
+import AccountInfo from './Pages/accountInfo';
 
 function App() {
   return <Router>
       <Routes>
-        <Route exact path="/" element={<login />} />
-        <Route path="/home" element={<home />} />
-        <Route path="/accountInfo" element={<accountInfo />} />
+        <Route exact path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/accountInfo" element={<AccountInfo />} />
       </Routes>
     </Router>;
   
