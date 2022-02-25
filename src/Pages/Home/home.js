@@ -1,4 +1,5 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function home(){
     /*
@@ -8,16 +9,21 @@ function home(){
             - will add that later once I figure out the attributes for user information
     */
     return(
-        <div className="content-container">
-            <div className="navbar-container">
-                <div className="welcome-user-container">
-                    
+        <div className="container">
+            <nav className="navbar navbar-default">
+                <div className="container">
+                    <div className="navbar-header">
+                        <span className="navbar-brand mb-0 h1">Welcome, user</span>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm">Create Team</button>
+                    <ul className="nav navbar-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/">Projects</a></li>
+                        <li><a href="/">Contacts</a></li>
+                        <li><a href="/"> Account Info</a></li>  
+                    </ul>
                 </div>
-
-                <div className="create-team-button">
-
-                </div>
-            </div>
+            </nav>
         </div>
     );
 }
