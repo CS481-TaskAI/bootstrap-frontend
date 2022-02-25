@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Routes, Route, Link, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Login from './Pages/login.component';
 import SignUp from './Pages/signup.component';
 import Home from './Pages/home';
