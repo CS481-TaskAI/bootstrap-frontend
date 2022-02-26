@@ -69,13 +69,13 @@ function navBar()
     adding a props to function so that we can pull from the database to 
     display the user's name for the welcome greeting
 */
-function headerBar(props)
+function headerBar()
 {
     return(
         <Container>
             <Row>
                 <Col>
-                    <welcomeUser user={props.name}/>
+                    <welcomeUser user="User"/>
                 </Col>
                 <Col>
                     <createTeamButton/>
@@ -115,7 +115,7 @@ function home(props){
     return(
         <Container className="">
             <Row>
-                <headerBar user={props.name}/>
+                <headerBar/>
             </Row>
             <Row>
                 <formatDate/>
