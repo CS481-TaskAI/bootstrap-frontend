@@ -1,9 +1,11 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Container, Nav, Row } from "react-bootstrap";
+import { Button, Col, Container, Nav, Row } from "react-bootstrap";
 
 
-
+/*
+    container for the welcome, user greeting for the home page only
+*/
 function welcomeUser(props)
 {
     return(
@@ -15,6 +17,11 @@ function welcomeUser(props)
     );
 }
 
+/*
+    container for the create team button, need to add an
+    onClick function and create another component for the 
+    create team form
+*/
 function createTeamButton()
 {
     return(
@@ -27,6 +34,11 @@ function createTeamButton()
 
 }
 
+/*
+    container for the nav bar side of the header, don't need to add much
+    other than changing the color of the font to indicate the active page
+    the user is currently on.
+*/
 function navBar()
 {
     return(
@@ -48,53 +60,72 @@ function navBar()
         </Container>
     );
 }
+
+/*
+    container for the header bar which holds the welcome user, create team button,
+    and nav bar containers and puts them together into one unit.
+    will format after seeing how the bootstrap put them together
+
+    adding a props to function so that we can pull from the database to 
+    display the user's name for the welcome greeting
+*/
 function headerBar(props)
 {
     return(
         <Container>
             <Row>
-
+                <Col>
+                    <welcomeUser user={props.name}/>
+                </Col>
+                <Col>
+                    <createTeamButton/>
+                </Col>
+                <Col>
+                    <navBar/>
+                </Col>
             </Row>
         </Container>
     );
 }
 
-function formatDate()
+/*
+    container for the current date
+    will need to format is differently to 
+    match up to Taban's prototype in figma
+*/
+function formatDate(date)
 {
-
+    return date.toLocaleDateString();
 }
-function home(){
+
+/*
+    home will show all of the components inside of the main 
+    container. Home container will hold all of the content.
+*/
+function home(props){
     /*
-        want to add an <img> for the users porfile pic
-        but probably won't have time to add that
-        in the welcome-user-container, add the welcome user greeting with the user's name
-            - will add that later once I figure out the attributes for user information
+        adding dummy data to some of the 
+        button and stuff just to get an idea
+        of how we will connect the backend with
+        the frontend
+
+        Will ask Jayme and backend team about how to go
+        about setting up the buttons, inputs, and forms.
     */
     return(
-        <div className="container-fluid">
-            <nav className="navbar navbar-default">
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <span className="navbar-brand mb-0 h1">Welcome, user</span>
-                    </div>
-                    <button type="button" className="btn btn-secondary btn-sm">Create Team</button>
-                    <ul className="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/Pages/projects">Projects</a></li>
-                        <li><a href="/Pages/contacts">Contacts</a></li>
-                        <li><a href="/Pages/accountInfo"> Account Info</a></li>  
-                    </ul>
-                </div>
-            </nav>
+        <Container className="">
+            <Row>
+                <headerBar user={props.name}/>
+            </Row>
+            <Row>
+                <formatDate/>
+            </Row>
+            <Row>
 
-            <div className="container">
-                Today: Monday 10th/22 Clock: 12:00 PM
-            </div>
-
-            <div className="container">
-
-            </div>
-
-        </div>
+            </Row>
+            
+        </Container>
     );
 }
+
+export default home;
