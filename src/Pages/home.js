@@ -9,21 +9,30 @@ function home(){
             - will add that later once I figure out the attributes for user information
     */
     return(
-        <div className="container">
+        <div className="container-fluid">
             <nav className="navbar navbar-default">
-                <div className="container">
+                <div className="container-fluid">
                     <div className="navbar-header">
                         <span className="navbar-brand mb-0 h1">Welcome, user</span>
                     </div>
-                    <button type="button" class="btn btn-secondary btn-sm">Create Team</button>
+                    <button type="button" className="btn btn-secondary btn-sm">Create Team</button>
                     <ul className="nav navbar-nav">
                         <li class="active"><a href="/">Home</a></li>
-                        <li><a href="/">Projects</a></li>
-                        <li><a href="/">Contacts</a></li>
-                        <li><a href="/"> Account Info</a></li>  
+                        <li><a href="/Pages/projects">Projects</a></li>
+                        <li><a href="/Pages/contacts">Contacts</a></li>
+                        <li><a href="/Pages/accountInfo"> Account Info</a></li>  
                     </ul>
                 </div>
             </nav>
+
+            <div className="container">
+                Today: Monday 10th/22 Clock: 12:00 PM
+            </div>
+
+            <div className="container">
+
+            </div>
+
         </div>
     );
 }
