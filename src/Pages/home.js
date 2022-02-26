@@ -1,6 +1,68 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Button, Container, Nav, Row } from "react-bootstrap";
 
+
+
+function welcomeUser(props)
+{
+    return(
+        <Container>
+            <div className="">
+                Welcome, {props.user.name};
+            </div>
+        </Container>
+    );
+}
+
+function createTeamButton()
+{
+    return(
+        <Container>
+            <div className="">
+                <Button variant="outline-secondary" size="sm">Create Team</Button>
+            </div> 
+        </Container>
+    );
+
+}
+
+function navBar()
+{
+    return(
+        <Container>
+            <Nav>
+                <Nav.Item>
+                    <Nav.Link href="/home">Home</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/projects">Projects</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/contacts">Contacts</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/accountInfo">Account Info</Nav.Link>
+                </Nav.Item>
+            </Nav>
+        </Container>
+    );
+}
+function headerBar(props)
+{
+    return(
+        <Container>
+            <Row>
+
+            </Row>
+        </Container>
+    );
+}
+
+function formatDate()
+{
+
+}
 function home(){
     /*
         want to add an <img> for the users porfile pic
@@ -36,5 +98,3 @@ function home(){
         </div>
     );
 }
-
-export default home;
