@@ -6,12 +6,12 @@ import { Button, Col, Container, Nav, Row } from "react-bootstrap";
 /*
     container for the welcome, user greeting for the home page only
 */
-function welcomeUser(props)
+function WelcomeUser()
 {
     return(
         <Container>
             <div className="">
-                Welcome, {props.user.name};
+                Welcome User;
             </div>
         </Container>
     );
@@ -22,13 +22,11 @@ function welcomeUser(props)
     onClick function and create another component for the 
     create team form
 */
-function createTeamButton()
+function CreateTeamButton()
 {
     return(
         <Container>
-            <div className="">
-                <Button variant="outline-secondary" size="sm">Create Team</Button>
-            </div> 
+            <Button variant="outline-secondary" size="sm">Create Team</Button>   
         </Container>
     );
 
@@ -39,7 +37,7 @@ function createTeamButton()
     other than changing the color of the font to indicate the active page
     the user is currently on.
 */
-function navBar()
+function NavBar()
 {
     return(
         <Container>
@@ -69,19 +67,19 @@ function navBar()
     adding a props to function so that we can pull from the database to 
     display the user's name for the welcome greeting
 */
-function headerBar()
+function HeaderBar()
 {
     return(
         <Container>
             <Row>
                 <Col>
-                    <welcomeUser user="User"/>
+                    <WelcomeUser/>
                 </Col>
                 <Col>
-                    <createTeamButton/>
+                    <CreateTeamButton/>
                 </Col>
                 <Col>
-                    <navBar/>
+                    <NavBar/>
                 </Col>
             </Row>
         </Container>
@@ -93,16 +91,34 @@ function headerBar()
     will need to format is differently to 
     match up to Taban's prototype in figma
 */
-function formatDate(date)
+function FormatDate(date)
 {
     return date.toLocaleDateString();
+}
+
+
+
+/*
+    container for the adding the task component. When user
+    clicks on the input form and popup form will pop up and
+    allow the user to add tasks to their task category
+
+    use an input group to be the popup screen
+*/
+function CreateTasks()
+{
+    return(
+        <Container>
+            
+        </Container>
+    );
 }
 
 /*
     home will show all of the components inside of the main 
     container. Home container will hold all of the content.
 */
-function home(props){
+function Home(){
     /*
         adding dummy data to some of the 
         button and stuff just to get an idea
@@ -113,12 +129,12 @@ function home(props){
         about setting up the buttons, inputs, and forms.
     */
     return(
-        <Container className="">
+        <Container>
             <Row>
-                <headerBar/>
+                <HeaderBar/>
             </Row>
             <Row>
-                <formatDate/>
+                <FormatDate/>
             </Row>
             <Row>
 
@@ -128,4 +144,4 @@ function home(props){
     );
 }
 
-export default home;
+export default Home;
