@@ -5,6 +5,8 @@ import SignUp from './Pages/signup';
 import Home from './Pages/home';
 import AccountInfo from './Pages/accountInfo';
 
+import React, { useState } from 'react';
+
 function App() {
   return (<Router>
           <Routes>
@@ -15,6 +17,7 @@ function App() {
             <Route path="/home" element={Home} />
           </Routes>
       </Router>
+      
   );
   
 }
