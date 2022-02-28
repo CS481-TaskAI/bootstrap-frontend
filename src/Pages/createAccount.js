@@ -29,6 +29,10 @@ function createAccount(){
                                 <Form.Label>Retype Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password"/>
                             </Form.Group>
+                            <Form.Group controlId="extraInfo">
+                                <Form.Label>Bio</Form.Label>
+                                <Form.Control type="info" placeholder="Write your bio here..."/>
+                            </Form.Group>
                         </Form>
 
                         <Button className="mt-4"variant="info btn-block" type="submit">
