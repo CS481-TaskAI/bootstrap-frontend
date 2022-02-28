@@ -109,6 +109,11 @@ function CreateTasks()
 {
     return(
         <Container>
+            <div>
+               <Button>
+
+                </Button> 
+            </div>
             
         </Container>
     );
@@ -137,7 +142,7 @@ function Home(){
                 <FormatDate/>
             </Row>
             <Row>
-
+                <CreateTasks/>
             </Row>
             
         </Container>
