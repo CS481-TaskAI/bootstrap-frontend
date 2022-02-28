@@ -3,16 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Col, Container, Nav, Row } from "react-bootstrap";
 
 
-/*
-    container for the welcome, user greeting for the home page only
-*/
 function WelcomeUser()
 {
     return(
-        <Container>
-            <div className="">
-                Welcome User;
-            </div>
+        <Container className="d-flex p-0">
+            <Row className="d-flex flex-row">
+                <Col className="justify-content-center">
+                    <h1>Welcome, User</h1>
+                </Col>
+            </Row>
         </Container>
     );
 }
@@ -20,13 +19,15 @@ function WelcomeUser()
 /*
     container for the create team button, need to add an
     onClick function and create another component for the 
-    create team form
+    create team form 
 */
 function CreateTeamButton()
 {
     return(
-        <Container>
-            <Button variant="outline-secondary" size="sm">Create Team</Button>   
+        <Container className="d-flex p-0">
+            <Button className="bg-light" variant="outline-secondary" size="sm">
+                Create Team
+            </Button>   
         </Container>
     );
 
@@ -40,21 +41,23 @@ function CreateTeamButton()
 function NavBar()
 {
     return(
-        <Container>
-            <Nav>
-                <Nav.Item>
-                    <Nav.Link href="/home">Home</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/projects">Projects</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/contacts">Contacts</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                    <Nav.Link href="/accountInfo">Account Info</Nav.Link>
-                </Nav.Item>
-            </Nav>
+        <Container className="d-flex p-0">
+            <Row className="d-flex flex-row justify-content-center">
+                <Nav>
+                    <Nav.Item>
+                        <Nav.Link href="/home">Home</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="/projects">Projects</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="/contacts">Contacts</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link href="/accountInfo">Account Info</Nav.Link>
+                    </Nav.Item>
+                </Nav>
+            </Row>
         </Container>
     );
 }
@@ -70,15 +73,15 @@ function NavBar()
 function HeaderBar()
 {
     return(
-        <Container>
-            <Row>
-                <Col>
+        <Container className="d-flex p-0">
+            <Row className="d-flex flex-row justify-content-between">
+                <Col className="position-static d-flex flex-column">
                     <WelcomeUser/>
                 </Col>
-                <Col>
+                <Col className="position-static d-flex flex-column">
                     <CreateTeamButton/>
                 </Col>
-                <Col>
+                <Col className="position-static d-flex flex-column">
                     <NavBar/>
                 </Col>
             </Row>
@@ -105,17 +108,13 @@ function FormatDate(date)
 
     use an input group to be the popup screen
 */
-function CreateAndRewards()
+function CreateTasks()
 {
     return(
         <Container>
             <Row>
                 <Col>
-                    <div className="d-grid gap-2">
-                        <Button variant="light">
-                            What would you like to do today?
-                        </Button>
-                    </div>
+                    
                 </Col>
 
                 <Col>
@@ -128,12 +127,6 @@ function CreateAndRewards()
                     <Button variant="primary">
                         Primary
                     </Button>
-                </Col>
-
-                <Col>
-                    <Container>
-                        Weekly Rewards
-                    </Container>
                 </Col>
             </Row>
 
@@ -171,15 +164,15 @@ function Home(){
     */
     return(
         <>
-            <Container>
-                <Row>
+            <Container className="bg-white rounded">
+                <Row className="bg-transparent">
                     <HeaderBar/>
                 </Row>
                 <Row>
                     <FormatDate/>
                 </Row>
                 <Row>
-                    <CreateAndRewards/>
+                    <CreateTasks/>
                 </Row>
                 <Row>
                     <TaskCategories/>
