@@ -170,21 +170,23 @@ function Home(){
         about setting up the buttons, inputs, and forms.
     */
     return(
-        <Container>
-            <Row>
-                <HeaderBar/>
-            </Row>
-            <Row>
-                <FormatDate/>
-            </Row>
-            <Row>
-                <CreateAndRewards/>
-            </Row>
-            <Row>
-                <TaskCategories/>
-            </Row>
-            
-        </Container>
+        <>
+            <Container>
+                <Row>
+                    <HeaderBar/>
+                </Row>
+                <Row>
+                    <FormatDate/>
+                </Row>
+                <Row>
+                    <CreateAndRewards/>
+                </Row>
+                <Row>
+                    <TaskCategories/>
+                </Row>
+                
+            </Container>
+        </>
     );
 }
 
