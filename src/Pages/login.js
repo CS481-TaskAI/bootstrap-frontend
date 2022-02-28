@@ -1,30 +1,35 @@
-import React, { Component } from "react";
+import React from "react";
+import { Col, Container, Form, Row, Button } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default class Login extends Component {
-    render() {
-        return (
-            <form>
+function login(){
+    return(
+        <>
+            <Container className="bg-danger rounded">
+                <h1 className="shadow-sm text-white mt-5 p-3 text-center rounded">Task AI</h1>
+                <Row className="mt-5">
+                    <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded-lg text-center">
+                        <Form>
+                            <Form.Group controlId="formBasicEmail">
+                                <Form.Label>Email Address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter Email"/>
+                            </Form.Group>
 
-                <h3>Log in</h3>
+                            <Form.Group controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password"/>
+                            </Form.Group>
+                        </Form>
 
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="email" className="form-control" placeholder="Enter email" />
-                </div>
+                        <Button className="mt-4"variant="info btn-block" type="submit">
+                            Login
+                        </Button>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
-
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                    </div>
-                </div>
-
-            </form>
-        );
-    }
+                    </Col>
+                </Row>
+            </Container>
+        </>
+    );
 }
+
+export default login;
