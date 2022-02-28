@@ -105,20 +105,56 @@ function FormatDate(date)
 
     use an input group to be the popup screen
 */
-function CreateTasks()
+function CreateAndRewards()
 {
     return(
         <Container>
-            <div>
-               <Button>
+            <Row>
+                <Col>
+                    <div className="d-grid gap-2">
+                        <Button variant="light">
+                            What would you like to do today?
+                        </Button>
+                    </div>
+                </Col>
 
-                </Button> 
-            </div>
-            
+                <Col>
+                    <div>
+                        Or
+                    </div>
+                </Col>
+
+                <Col>
+                    <Button variant="primary">
+                        Primary
+                    </Button>
+                </Col>
+
+                <Col>
+                    <Container>
+                        Weekly Rewards
+                    </Container>
+                </Col>
+            </Row>
+
         </Container>
     );
 }
 
+/*
+    container that will hold the task categories
+    need to make another function for the 
+    boostrap cards. the cards will respresent the categories
+    that will hold the tasks
+*/
+function TaskCategories()
+{
+    return(
+        <Container>
+
+        </Container>
+    );
+}
 /*
     home will show all of the components inside of the main 
     container. Home container will hold all of the content.
@@ -142,7 +178,10 @@ function Home(){
                 <FormatDate/>
             </Row>
             <Row>
-                <CreateTasks/>
+                <CreateAndRewards/>
+            </Row>
+            <Row>
+                <TaskCategories/>
             </Row>
             
         </Container>
