@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Col, Container, Form, Nav, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, ListGroup, Nav, Row } from "react-bootstrap";
 
 
 
@@ -69,7 +69,7 @@ function Home(){
     */
     return(
         <>
-            <Container className="bg-white rounded mt-5">
+            <Container fluid="md" className="bg-white rounded mt-5 h-75">
                 <Row className="d-flex justify-content-between mt-4">
                     <Col className="mt-3 p-3 text-center">
                         <h4 className="text-dark ">
@@ -108,7 +108,7 @@ function Home(){
                     </Col>
                 </Row>
 
-                <Row className="mb-3 p-3 g-3">
+                <Row className="d-flex justify-content-between text-start p-3">
                     <Col className="col-5">
                         <Form>
                             <Form.Group controlId="formInputTask">
@@ -117,6 +117,58 @@ function Home(){
                         </Form>
                     </Col>
 
+                    <Col>
+                        <h6 className="text-dark">
+                            Or
+                        </h6>
+                    </Col>
+
+                    <Col>
+                        <Button className="bg-primary btn-sm rounded-pill">
+                            Add Task Category
+                        </Button>
+                    </Col>
+
+                    <Col>
+                       <Card className="text-white bg-danger rounded">
+                            <Card.Body>
+                                <Card.Title>Weekly Rewards</Card.Title>
+                                <Card.Text> Walk/Gym </Card.Text>    
+                            </Card.Body>   
+                        </Card>  
+                    </Col>
+                </Row>
+
+                <Row className="d-flex justify-content-start mt-2">
+                    <Col className="col-2 text-center">
+                        <h6 className="text-body">
+                            Task Overview
+                        </h6>
+                    </Col>
+                </Row>
+
+                <Row className="justify-content-center ms-3">
+                    <Container>
+                        <Row className="mb-3">
+                            <Col className="col-3">
+                                <Card className="shadow-sm text-dark bg-white rounded">
+                                    <Card.Body>
+                                        <Card.Title>To Do</Card.Title>
+                                        <Card.Text>
+                                            <ListGroup>
+                                                <ListGroup.Item>
+                                                    Create tasks
+                                                </ListGroup.Item>
+                                                <ListGroup.Item>
+                                                    Create tasks in different categories
+                                                </ListGroup.Item>
+                                            </ListGroup>
+                                        </Card.Text>    
+                                    </Card.Body>   
+                                </Card>
+                            </Col>
+                        </Row>
+                    </Container>
                 </Row>
             </Container>
         </>
