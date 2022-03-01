@@ -1,8 +1,9 @@
 import React from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
 
-function createAccount(){
+function CreateAccount(){
     return(
         <>
             <Container className="bg-danger rounded">
@@ -36,8 +37,10 @@ function createAccount(){
                         </Form>
 
                         <Button className="mt-4"variant="info btn-block" type="submit">
-                            Create Account
+                            <Link to="/">Create Account</Link>
                         </Button>
+
+                        <Link to="/">Login to Account</Link>
 
                     </Col>
                 </Row>
@@ -46,4 +49,4 @@ function createAccount(){
     );
 }
 
-export default createAccount;
+export default CreateAccount;
