@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Button, Col, Container, Nav, Row } from "react-bootstrap";
+import { Button, Col, Container, Form, Nav, Row } from "react-bootstrap";
 
 
 
@@ -70,7 +70,7 @@ function Home(){
     return(
         <>
             <Container className="bg-white rounded mt-5">
-                <Row className="d-flex justify-content-between mt-3">
+                <Row className="d-flex justify-content-between mt-4">
                     <Col className="mt-3 p-3 text-center">
                         <h4 className="text-dark ">
                             Welcome, User
@@ -100,7 +100,7 @@ function Home(){
                     </Col>
                 </Row>
 
-                <Row className="d-flex justify-content-start mt-1 text-start">
+                <Row className="d-flex justify-content-start text-start">
                     <Col className="col-3 text-center">
                         <h6 className="text-body">
                             Today: March 1, 2022
@@ -108,9 +108,13 @@ function Home(){
                     </Col>
                 </Row>
 
-                <Row className="mt-3 mb-3 p-3 g-3">
-                    <Col className="col-6">
-                        
+                <Row className="mb-3 p-3 g-3">
+                    <Col className="col-5">
+                        <Form>
+                            <Form.Group controlId="formInputTask">
+                                <Form.Control type="input" placeholder="What would you like to do?" />
+                            </Form.Group>
+                        </Form>
                     </Col>
 
                 </Row>
