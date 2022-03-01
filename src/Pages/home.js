@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Col, Container, Nav, Row } from "react-bootstrap";
-import { Collapse } from "bootstrap";
+
 
 
 
@@ -77,7 +77,7 @@ function Home(){
                         </h4>
                     </Col>
                     <Col className="mt-3 p-3 text-center">
-                        <Button className="bg-light text-dark btn-sm border-dark">
+                        <Button className="bg-light text-dark btn-sm border-dark rounded-pill">
                             Create Team
                         </Button>   
                         
@@ -106,6 +106,13 @@ function Home(){
                             Today: March 1, 2022
                         </h6>
                     </Col>
+                </Row>
+
+                <Row className="mt-3 mb-3 p-3 g-3">
+                    <Col className="col-6">
+                        
+                    </Col>
+
                 </Row>
             </Container>
         </>
