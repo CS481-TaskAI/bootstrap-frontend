@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Col, Container, Nav, Row } from "react-bootstrap";
+import { Collapse } from "bootstrap";
 
 
 
@@ -69,23 +70,41 @@ function Home(){
     return(
         <>
             <Container className="bg-white rounded mt-5">
-                <Row className="row g-2">
-                    <Col className="col-6">
-                        <h3 className="text-center text-dark mt-3 p-3">
+                <Row className="d-flex justify-content-between mt-3">
+                    <Col className="mt-3 p-3 text-center">
+                        <h4 className="text-dark ">
                             Welcome, User
-                        </h3>
+                        </h4>
                     </Col>
-                    <Col className="col-6">
-                        <Button className="p-1 mt-2 bg-light text-dark btn-sm border-dark">
+                    <Col className="mt-3 p-3 text-center">
+                        <Button className="bg-light text-dark btn-sm border-dark">
                             Create Team
-                        </Button>
+                        </Button>   
+                        
                     </Col>
-                    <Col className="col-6">
+                    <Col className="mt-3 p-3 text-center">
                         <Nav>
                             <Nav.Item>
-                                
+                                <Nav.Link className="text-secondary ative" aria-current="page" href="/home">Home</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="text-dark" href="/projects">Projects</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="text-dark" href="/contacts">Contacts</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link className="text-dark" href="/accountInfo">Account Info</Nav.Link>
                             </Nav.Item>
                         </Nav>
+                    </Col>
+                </Row>
+
+                <Row className="d-flex justify-content-start mt-1 text-start">
+                    <Col className="col-3 text-center">
+                        <h6 className="text-body">
+                            Today: March 1, 2022
+                        </h6>
                     </Col>
                 </Row>
             </Container>
