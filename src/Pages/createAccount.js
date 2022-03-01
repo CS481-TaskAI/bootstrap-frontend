@@ -37,10 +37,10 @@ function CreateAccount(){
                         </Form>
 
                         <Button className="mt-4"variant="info btn-block" type="submit">
-                            <Link to="/">Create Account</Link>
+                            <Link to="/" className="text-white">Create Account</Link>
                         </Button>
 
-                        <Link to="/">Login to Account</Link>
+                        <Link to="/" className="text-white">Login to Account</Link>
 
                     </Col>
                 </Row>

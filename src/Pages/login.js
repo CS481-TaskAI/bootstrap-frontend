@@ -23,10 +23,10 @@ function Login(){
                         </Form>
 
                         <Button className="mt-4"variant="info btn-block" type="submit">
-                            <Link to="/home">Login</Link>
+                            <Link to="/home" className="text-white">Login</Link>
                         </Button>
 
-                        <Link to="/createAccount">Create Account</Link>
+                        <Link to="/createAccount" className="text-white">Create Account</Link>
 
                     </Col>
                 </Row>
