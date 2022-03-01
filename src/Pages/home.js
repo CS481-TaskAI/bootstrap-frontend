@@ -68,12 +68,24 @@ function Home(){
     */
     return(
         <>
-            <Container className="bg-white rounded">
-                <Row className="row-cols-3 row-cols-lg-5 g-2 g-lg-3 p-3">
-                    <Col>
+            <Container className="bg-white rounded mt-5">
+                <Row className="row g-2">
+                    <Col className="col-6">
                         <h3 className="text-center text-dark mt-3 p-3">
                             Welcome, User
                         </h3>
+                    </Col>
+                    <Col className="col-6">
+                        <Button className="p-1 mt-2 bg-light text-dark btn-sm border-dark">
+                            Create Team
+                        </Button>
+                    </Col>
+                    <Col className="col-6">
+                        <Nav>
+                            <Nav.Item>
+                                
+                            </Nav.Item>
+                        </Nav>
                     </Col>
                 </Row>
             </Container>
