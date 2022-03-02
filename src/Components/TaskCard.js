@@ -13,7 +13,7 @@ function TaskCard(props) {
             <Card className="shadow-sm text-dark bg-white rounded">
                 <Card.Body>
                     <Card.Text>
-                        {props.title}
+                        {props.description}
                     </Card.Text>    
                 </Card.Body>   
             </Card>  
