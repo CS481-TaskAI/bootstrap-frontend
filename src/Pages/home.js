@@ -85,7 +85,7 @@ function Home(){
                     <Col className="mt-3 p-3 text-center">
                         <Nav>
                             <Nav.Item>
-                                <Nav.Link className="text-secondary ative" aria-current="page" href="/home">Home</Nav.Link>
+                                <Nav.Link className="text-secondary active" aria-current="page" href="/home">Home</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link className="text-dark" href="/projects">Projects</Nav.Link>
@@ -103,7 +103,7 @@ function Home(){
                 <Row className="d-flex justify-content-start text-start">
                     <Col className="col-3 text-center">
                         <h6 className="text-body">
-                            Today: March 1, 2022
+                            
                         </h6>
                     </Col>
                 </Row>
