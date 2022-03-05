@@ -1,11 +1,46 @@
 import React, {useState} from "react";
 import { Col, Container, Form, Row, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Route, useNavigate } from "react-router-dom";
+import Home from './home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    // for routing to /home
+    const navigate = useNavigate()
+
+    //API call to get the user information
+    async function tryLogin() {
+    
+        let data = {
+            email: email,
+            password: password
+        }
+
+        const response = await fetch(`/login`, {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
+        });;
+        const json = await response.json();
+        console.log('this is from Login');
+        console.log(json);
+        if (json.hasOwnProperty('error')){
+            alert(json.error)
+        } else {
+            goHome(json) 
+        }                 
+    }
+
+    function goHome(info){
+        console.log("before navigating to home, ")
+        console.log(info)
+        navigate('/home', {state:info})
+    }
 
     function validateForm(){
         return email.length > 0 && password.length > 0;
@@ -13,6 +48,7 @@ function Login(){
 
     function handleSubmit(event){
         event.preventDefault();
+        tryLogin()
     }
     return(
         <>
@@ -43,8 +79,8 @@ function Login(){
                             </Form.Group>
                         </Form>
 
-                        <Button className="mt-4"variant="info btn-block" type="submit" disabled={!validateForm()}>
-                            <Link to="/home" className="text-white">Login</Link>
+                        <Button className="mt-4"variant="info btn-block" type="submit" disabled={!validateForm()} onClick={handleSubmit}>
+                            Login
                         </Button>
 
                         <Link to="/createAccount" className="text-white">Create Account</Link>
