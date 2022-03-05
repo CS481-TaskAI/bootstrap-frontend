@@ -5,59 +5,6 @@ import { Button, Card, Col, Container, Form, ListGroup, Nav, Row } from "react-b
 import TaskContainer from "../Components/TaskContainer"
 import ProjectContainer from "../Components/ProjectContainer"
 
-
-
-/*
-    container for the create team button, need to add an
-    onClick function and create another component for the 
-    create team form 
-*/
-
-
-/*
-    container for the nav bar side of the header, don't need to add much
-    other than changing the color of the font to indicate the active page
-    the user is currently on.
-*/
-
-
-/*
-    container for the header bar which holds the welcome user, create team button,
-    and nav bar containers and puts them together into one unit.
-    will format after seeing how the bootstrap put them together
-
-    adding a props to function so that we can pull from the database to 
-    display the user's name for the welcome greeting
-*/
-
-
-/*
-    container for the current date
-    will need to format is differently to 
-    match up to Taban's prototype in figma
-*/
-
-
-/*
-    container for the adding the task component. When user
-    clicks on the input form and popup form will pop up and
-    allow the user to add tasks to their task category
-
-    use an input group to be the popup screen
-*/
-
-
-/*
-    container that will hold the task categories
-    need to make another function for the 
-    boostrap cards. the cards will respresent the categories
-    that will hold the tasks
-*/
-
-/*
-    home will show all of the components inside of the main 
-    container. Home container will hold all of the content.
-*/
 function Home(props){
     
     const location = useLocation();
@@ -183,7 +130,7 @@ function Home(props){
 
                         </Container>
                     </Row>
-                    
+
                 </Container>
             </>
         );
