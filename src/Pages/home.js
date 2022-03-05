@@ -75,113 +75,118 @@ function Home(props){
     */
 
 
-    return(
-        <>
-            <Container fluid="md" className="bg-white rounded mt-5 h-75">
-                <Row className="d-flex justify-content-between mt-4">
-                    <Col className="mt-3 p-3 text-center">
-                        <h4 className="text-dark ">
-                            Welcome, {location.state.username} 
-                        </h4>
-                    </Col>
-                    <Col className="mt-3 p-3 text-center">
-                        <Button className="bg-light text-dark btn-sm border-dark rounded-pill">
-                            Create Team
-                        </Button>   
-                        
-                    </Col>
-                    <Col className="mt-3 p-3 text-center">
-                        <Nav>
-                            <Nav.Item>
-                                <Nav.Link className="text-secondary ative" aria-current="page" href="/home">Home</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link className="text-dark" href="/projects">Projects</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link className="text-dark" href="/contacts">Contacts</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link className="text-dark" href="/accountInfo">Account Info</Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                    </Col>
-                </Row>
+        return(
+            <>
+                <Container fluid="lg" className="bg-white rounded mt-5 h-75">
+                    <Row className="d-flex justify-content-between mt-4">
 
-                <Row className="d-flex justify-content-start text-start">
-                    <Col className="col-3 text-center">
-                        <h6 className="text-body">
-                            Today: March 1, 2022
-                        </h6>
-                    </Col>
-                </Row>
+                        <Col className="col-2 mt-3 p-3 text-center">
+                            <h4 className="text-dark ">
+                                Welcome, User
+                            </h4>
+                        </Col>
 
-                <Row className="d-flex justify-content-between text-start p-3">
-                    <Col className="col-5">
-                        <Form>
-                            <Form.Group controlId="formInputTask">
-                                <Form.Control type="input" placeholder="What would you like to do?" />
-                            </Form.Group>
-                        </Form>
-                    </Col>
+                        <Col className="mt-3 p-3 text-center">
+                            <Button className="bg-light text-dark btn-sm border-dark rounded-pill">
+                                Create Team
+                            </Button>       
+                        </Col>
 
-                    <Col>
-                        <h6 className="text-dark">
-                            Or
-                        </h6>
-                    </Col>
+                        <Col className="mt-3 p-3 text-center">
+                            <Nav>
+                                <Nav.Item>
+                                    <Nav.Link className="text-secondary active" aria-current="page" href="/home">Home</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link className="text-dark" href="/projects">Projects</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link className="text-dark" href="/contacts">Contacts</Nav.Link>
+                                </Nav.Item>
+                                <Nav.Item>
+                                    <Nav.Link className="text-dark" href="/accountInfo">Account Info</Nav.Link>
+                                </Nav.Item>
+                            </Nav>
+                        </Col>
 
-                    <Col>
-                        <Button className="bg-primary btn-sm rounded-pill">
-                            Add Task Category
-                        </Button>
-                    </Col>
+                    </Row>
+    
+                    <Row className="d-flex justify-content-start mt-2">
 
-                    <Col>
-                       <Card className="text-white bg-danger rounded">
-                            <Card.Body>
-                                <Card.Title>Weekly Rewards</Card.Title>
-                                <Card.Text> Walk/Gym </Card.Text>    
-                            </Card.Body>   
-                        </Card>  
-                    </Col>
-                </Row>
+                        <Col className="col-2 text-center">
+                            <h6 className="text-body">
+                                Today: 
+                            </h6>
+                        </Col>
 
-                <Row className="d-flex justify-content-start mt-2">
-                    <Col className="col-2 text-center">
-                        <h6 className="text-body">
-                            Task Overview
-                        </h6>
-                    </Col>
-                </Row>
+                    </Row>
+    
+                    <Row className="d-sm-flex p-3">
 
-                <Row className="justify-content-center ms-3">
-                    <Container>
-                        <Row className="mb-3">
-                            <Col className="col-3">
-                                <ProjectContainer user_id={location.state.id} />
-                                <Card className="shadow-sm text-dark bg-white rounded">
-                                    <Card.Body>
-                                        <Card.Title>To Do</Card.Title>
-                                        <Card.Text>
-                                            <ListGroup>
-                                                <ListGroup.Item>
-                                                    Create tasks
-                                                </ListGroup.Item>
-                                                <ListGroup.Item>
-                                                    Create tasks in different categories
-                                                </ListGroup.Item>
-                                            </ListGroup>
-                                        </Card.Text>    
-                                    </Card.Body>   
-                                </Card>
-                            </Col>
-                        </Row>
-                    </Container>
-                </Row>
-            </Container>
-        </>
-    );
+                        <Col className="d-grid flex-column col-5">
+                            <Button className="bg-light text-dark border border-secondary btn-sm rounded-pill">
+                                What would you like to do today?
+                            </Button>
+                        </Col>
+    
+                        <Col className="col-1 align-self-center text-center flex-column">
+                            <h6 className="text-dark">
+                                Or
+                            </h6>
+                        </Col>
+    
+                        <Col className="col-3 flex-column">
+                            <Button className="bg-primary btn-sm rounded-pill">
+                                Add Task Category
+                            </Button>
+                        </Col>
+
+                    </Row>
+    
+                    <Row className="d-flex justify-content-start mt-2 p-3">
+
+                        <Col className="col-3 text-center">
+                            <h2 className="text-body">
+                                Task Overview
+                            </h2>
+                        </Col>
+
+                    </Row>
+    
+                    <Row className="justify-content-center ms-3">
+
+                        <Container>
+
+                            <Row className="mb-3">
+
+                                <Col className="col-3">
+
+                                    <Card className="shadow-sm text-dark bg-white rounded">
+                                        <Card.Body>
+                                            <Card.Title className="text-center">To Do</Card.Title>
+                                            <Card.Text>
+                                                <ListGroup>
+                                                    <ListGroup.Item>
+                                                        Create tasks
+                                                    </ListGroup.Item>
+                                                    <ListGroup.Item>
+                                                        Create tasks in different categories
+                                                    </ListGroup.Item>
+                                                </ListGroup>
+                                            </Card.Text>    
+                                        </Card.Body>   
+                                    </Card>
+
+                                </Col>
+
+                            </Row>
+
+                        </Container>
+                    </Row>
+                    
+                </Container>
+            </>
+        );
 }
 
 export default Home;
