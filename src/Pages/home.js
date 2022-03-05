@@ -1,8 +1,9 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link, Route, useNavigate, useLocation } from "react-router-dom";
 import { Button, Card, Col, Container, Form, ListGroup, Nav, Row } from "react-bootstrap";
-
-
+import TaskContainer from "../Components/TaskContainer"
+import ProjectContainer from "../Components/ProjectContainer"
 
 
 
@@ -57,23 +58,30 @@ import { Button, Card, Col, Container, Form, ListGroup, Nav, Row } from "react-b
     home will show all of the components inside of the main 
     container. Home container will hold all of the content.
 */
-function Home(){
+function Home(props){
+    
+    const location = useLocation();
     /*
-        adding dummy data to some of the 
-        button and stuff just to get an idea
-        of how we will connect the backend with
-        the frontend
+        HOW TO ACCESS THE VALUES OF THE USER
 
-        Will ask Jayme and backend team about how to go
-        about setting up the buttons, inputs, and forms.
+        location.state.*
+        
+        USER HAS THE FOLLOWING VALUES
+
+        username, email, id, bio
+
+        EXAMPLE: location.state.username
+
     */
+
+
     return(
         <>
             <Container fluid="md" className="bg-white rounded mt-5 h-75">
                 <Row className="d-flex justify-content-between mt-4">
                     <Col className="mt-3 p-3 text-center">
                         <h4 className="text-dark ">
-                            Welcome, User
+                            Welcome, {location.state.username} 
                         </h4>
                     </Col>
                     <Col className="mt-3 p-3 text-center">
@@ -151,6 +159,7 @@ function Home(){
                     <Container>
                         <Row className="mb-3">
                             <Col className="col-3">
+                                <ProjectContainer user_id={location.state.id} />
                                 <Card className="shadow-sm text-dark bg-white rounded">
                                     <Card.Body>
                                         <Card.Title>To Do</Card.Title>
