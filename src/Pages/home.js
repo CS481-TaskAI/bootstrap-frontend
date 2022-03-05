@@ -69,9 +69,9 @@ function Home(){
     */
     return(
         <>
-            <Container fluid="md" className="bg-white rounded mt-5 h-75">
+            <Container fluid="lg" className="bg-white rounded mt-5 h-75">
                 <Row className="d-flex justify-content-between mt-4">
-                    <Col className="mt-3 p-3 text-center">
+                    <Col className="col-2 mt-3 p-3 text-center">
                         <h4 className="text-dark ">
                             Welcome, User
                         </h4>
@@ -100,50 +100,39 @@ function Home(){
                     </Col>
                 </Row>
 
-                <Row className="d-flex justify-content-start text-start">
-                    <Col className="col-3 text-center">
+                <Row className="d-flex justify-content-start mt-2">
+                    <Col className="col-2 text-center">
                         <h6 className="text-body">
-                            
+                            Today: 
                         </h6>
                     </Col>
                 </Row>
 
-                <Row className="d-flex justify-content-between text-start p-3">
-                    <Col className="col-5">
-                        <Form>
-                            <Form.Group controlId="formInputTask">
-                                <Form.Control type="input" placeholder="What would you like to do?" />
-                            </Form.Group>
-                        </Form>
+                <Row className="d-sm-flex p-3">
+                    <Col className="d-grid flex-column col-5">
+                        <Button className="bg-light text-dark border border-secondary btn-sm rounded-pill">
+                            What would you like to do today?
+                        </Button>
                     </Col>
 
-                    <Col>
+                    <Col className="col-1 align-self-center text-center flex-column">
                         <h6 className="text-dark">
                             Or
                         </h6>
                     </Col>
 
-                    <Col>
+                    <Col className="col-3 flex-column">
                         <Button className="bg-primary btn-sm rounded-pill">
                             Add Task Category
                         </Button>
                     </Col>
-
-                    <Col>
-                       <Card className="text-white bg-danger rounded">
-                            <Card.Body>
-                                <Card.Title>Weekly Rewards</Card.Title>
-                                <Card.Text> Walk/Gym </Card.Text>    
-                            </Card.Body>   
-                        </Card>  
-                    </Col>
                 </Row>
 
-                <Row className="d-flex justify-content-start mt-2">
-                    <Col className="col-2 text-center">
-                        <h6 className="text-body">
+                <Row className="d-flex justify-content-start mt-2 p-3">
+                    <Col className="col-3 text-center">
+                        <h2 className="text-body">
                             Task Overview
-                        </h6>
+                        </h2>
                     </Col>
                 </Row>
 
@@ -153,7 +142,7 @@ function Home(){
                             <Col className="col-3">
                                 <Card className="shadow-sm text-dark bg-white rounded">
                                     <Card.Body>
-                                        <Card.Title>To Do</Card.Title>
+                                        <Card.Title className="text-center">To Do</Card.Title>
                                         <Card.Text>
                                             <ListGroup>
                                                 <ListGroup.Item>
