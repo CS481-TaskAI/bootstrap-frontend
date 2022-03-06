@@ -120,16 +120,16 @@ function Home(props){
                                     <Card className="shadow-sm text-dark bg-white rounded">
                                         <Card.Body>
                                             <Card.Title className="text-center">To Do</Card.Title>
-                                            <Card.Text>
-                                                <ListGroup>
-                                                    <ListGroup.Item>
-                                                        Create tasks
-                                                    </ListGroup.Item>
-                                                    <ListGroup.Item>
-                                                        Create tasks in different categories
-                                                    </ListGroup.Item>
-                                                </ListGroup>
-                                            </Card.Text>    
+                                                <Card.Text>
+                                                    <ListGroup>
+                                                        <ListGroup.Item>
+                                                            Create tasks
+                                                        </ListGroup.Item>
+                                                        <ListGroup.Item>
+                                                            Create tasks in different categories
+                                                        </ListGroup.Item>
+                                                    </ListGroup>
+                                                </Card.Text>    
                                         </Card.Body>   
                                     </Card>
 
