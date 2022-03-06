@@ -53,10 +53,44 @@ function ContactModal(props)
     );
 }
 
+function TeamModal(props)
+{
+    return(
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Create a team/organization
+                </Modal.Title>
+            </Modal.Header>
 
+            <Modal.Body>
+                <Container>
+                    <Row className="mb-3">
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Control size="lg" type="text" placeholder="What is the name of your team/org?" />
+                        </Form.Group>
+                    </Row>
+                </Container>
+            </Modal.Body>
+
+            <Modal.Footer>
+                <Button variant="secondary" onClick={props.onHide}>Close</Button>
+                <Button> Submit</Button>
+            </Modal.Footer>
+
+        </Modal>
+    );
+
+}
 function Contacts(props)
 {
     const [contactModal, setContactModal] = useState(false);
+    const [teamModal, setTeamModal] = useState(false);
     return(
         
         <>
@@ -71,9 +105,14 @@ function Contacts(props)
                     </Col>
 
                     <Col className="mt-3 p-3 text-center">
-                        <Button className="bg-light text-dark btn-sm border-dark rounded-pill">
+                        <Button className="bg-light text-dark btn-sm border-dark rounded-pill" onClick={() => setTeamModal(true)}>
                             Create Team
                         </Button>
+
+                        <TeamModal
+                            show={teamModal}
+                            onHide={() => setTeamModal(false)}
+                            /> 
                     </Col>
 
                     <Col className="mt-3 p-3 text-center">
