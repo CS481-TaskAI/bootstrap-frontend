@@ -7,7 +7,7 @@ function Contacts(props)
 {
     return(
         <>
-            <Container className="bg-white rounded mt-5 h-75">
+            <Container fluid="lg" className="bg-white rounded mt-5 h-75">
                 <Row className="d-flex justify-content-between mt-4">
                     <Col className="col-2 mt-3 p-3 text-center">
                         <span>
@@ -41,24 +41,28 @@ function Contacts(props)
                         </Col>
                 </Row>
 
-                <Row className="d-flex mt-4">
-                    <Col>
-                        <Button>
+                <Row className="d-sm-flex p-3">
+                    <Col className="flex-column col-2">
+                        <Button className="rounded-pill">
                             Add Contact
                         </Button>
                     </Col>
 
-                    <Col>
+                    <Col className="flex-column col-4">
                         <Form.Group className="mb-3" GroupId="searchForm.ControlInput1">
                             <Form.Control type="search" placeholder="Search for contact"/>
                         </Form.Group>
                     </Col>
 
-                    <Col>
+                    <Col className="flex-column col-4">
                         <Form.Select>
-                            
+                            <option> Select Filter</option>
                         </Form.Select>
                     </Col>
+                </Row>
+
+                <Row>
+                    
                 </Row>
             </Container>
         
