@@ -5,6 +5,15 @@ import { Button, Card, Col, Container, Form, ListGroup, Nav, Row } from "react-b
 import TaskContainer from "../Components/TaskContainer"
 import ProjectContainer from "../Components/ProjectContainer"
 
+
+
+
+
+function handleDate()
+{
+    
+}
+
 function Home(props){
     
     const location = useLocation();
@@ -28,7 +37,7 @@ function Home(props){
                     <Row className="d-flex justify-content-between mt-4">
 
                         <Col className="col-2 mt-3 p-3 text-center">
-                            <h4 className="text-dark ">
+                            <h4 className="text-dark">
                                 Welcome, User
                             </h4>
                         </Col>
