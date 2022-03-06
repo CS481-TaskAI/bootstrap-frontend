@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import pic from './sample-profile.png'
+import pic from './public/sample-profile.png'
 import { Link, Route, useNavigate, useLocation } from "react-router-dom";
 import { Button, Image, Card, Col, Container, Form, ListGroup, Nav, Row, Modal } from "react-bootstrap";
 import TaskContainer from "../Components/TaskContainer"
@@ -154,7 +154,6 @@ function Home(props){
                         <Col className="col-2 mt-3 p-3 text-center">
 
                             <h4 className="text-dark">
-                                <img src={pic} className="roundedCircle" />
                                 Welcome, User
                             </h4>
                         </Col>
