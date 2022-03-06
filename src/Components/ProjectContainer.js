@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Card, Col, Container, Form, ListGroup, Nav, Row } from "react-bootstrap";
 import {useState, useEffect} from 'react';
-import ProjectCard from './TaskCard'
+import ProjectCard from './ProjectCard'
 
 function ProjectContainer(props) {
 
@@ -35,12 +35,12 @@ function ProjectContainer(props) {
             <div>
                 {projects.length > 0 &&
                     <div>  {/* Here we will create task cards in a for loop and pass them each a task object */}
-                        {projects.map((task) =>(
-                            <div key={task.id}>
+                        {projects.map((project) =>(
+                            <div key={project.id}>
                                 <ProjectCard 
-                                    id={task.id}
-                                    title={task.title}
-                                    description={task.description}                              
+                                    id={project.id}
+                                    title={project.title}
+                                    description={project.description}                              
                                 />
                             </div>
 

@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link, Route, useNavigate, useLocation } from "react-router-dom";
 import { Button, Card, Col, Container, Form, ListGroup, Nav, Row, Modal } from "react-bootstrap";
 import TaskContainer from "../Components/TaskContainer"
+import ProjectContainer from "../Components/ProjectContainer"
+import ContactContainer from "../Components/ContactContainer"
 
 
 
