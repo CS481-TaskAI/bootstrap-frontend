@@ -1,21 +1,100 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link, Route, useNavigate, useLocation } from "react-router-dom";
-import { Button, Card, Col, Container, Form, ListGroup, Nav, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Form, ListGroup, Nav, Row, Modal } from "react-bootstrap";
 import TaskContainer from "../Components/TaskContainer"
-import ProjectContainer from "../Components/ProjectContainer"
 
 
 
 
 
-function handleDate()
+function TaskModal(props)
 {
-    
+    return(
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Add task to a category
+                </Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <Container>
+                    <Row className="mb-3">
+                        <Col>
+                            <Form.Select>
+                                <option>Select Category</option>
+                            </Form.Select>
+                        </Col>
+                        <Col>
+                            <Form.Select >
+                                <option>Select Priority</option>
+                            </Form.Select>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                            <Form.Label>Description</Form.Label>
+                            <Form.Control as="textarea" rows={3}/>
+                        </Form.Group>
+                    </Row>
+                </Container>
+            </Modal.Body>
+
+            <Modal.Footer>
+                <Button variant="secondary" onClick={props.onHide}>Close</Button>
+                <Button> Submit</Button>
+            </Modal.Footer>
+
+        </Modal>
+    );
+}
+
+function CategoryModal(props)
+{
+    return(
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Create a new task category
+                </Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <Container>
+                    <Row className="mb-3">
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Control size="lg" type="text" placeholder="What is your new task category?" />
+                        </Form.Group>
+                    </Row>
+                </Container>
+            </Modal.Body>
+
+            <Modal.Footer>
+                <Button variant="secondary" onClick={props.onHide}>Close</Button>
+                <Button> Submit</Button>
+            </Modal.Footer>
+
+        </Modal>
+    );
+
 }
 
 function Home(props){
     
+    const [taskModal, setTaskModal] = React.useState(false);
+    const [categoryModal, setCategoryModal] = React.useState(false);
     const location = useLocation();
     /*
         HOW TO ACCESS THE VALUES OF THE USER
@@ -80,9 +159,14 @@ function Home(props){
                     <Row className="d-sm-flex p-3">
 
                         <Col className="d-grid flex-column col-5">
-                            <Button className="bg-light text-dark border border-secondary btn-sm rounded-pill">
+                            <Button className="bg-light text-dark border border-secondary btn-sm rounded-pill" onClick={() => setTaskModal(true)}>
                                 What would you like to do today?
                             </Button>
+
+                            <TaskModal
+                            show={taskModal}
+                            onHide={() => setTaskModal(false)}
+                            />
                         </Col>
     
                         <Col className="col-1 align-self-center text-center flex-column">
@@ -92,9 +176,14 @@ function Home(props){
                         </Col>
     
                         <Col className="col-3 flex-column">
-                            <Button className="bg-primary btn-sm rounded-pill">
-                                Add Task Category
+                            <Button className="bg-primary btn-sm rounded-pill" onClick={() => setCategoryModal(true)}>
+                                Create Task Category
                             </Button>
+
+                            <CategoryModal
+                            show={categoryModal}
+                            onHide={() => setCategoryModal(false)}
+                            />
                         </Col>
 
                     </Row>
