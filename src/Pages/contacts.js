@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Form } from "react-bootstrap";
+import { Form, Container, Row, Col, Nav, Button } from "react-bootstrap";
 
 
 function Contacts(props)
@@ -18,7 +18,7 @@ function Contacts(props)
                     </Col>
 
                     <Col className="mt-3 p-3 text-center">
-                        <Button className="bg-light text-dark btn-sm border-dark rounded-pill" onClick={() => setTeamModal(true)}>
+                        <Button className="bg-light text-dark btn-sm border-dark rounded-pill">
                             Create Team
                         </Button>
                     </Col>

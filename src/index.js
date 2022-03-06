@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import Home from './Pages/home';
 import * as serviceWorker from "./serviceWorker";
+import Contacts from "./Pages/contacts";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -13,6 +14,8 @@ ReactDOM.render(
         <Route path="/" element={ <App /> }>
         </Route>
         <Route path="/home" element={ <Home/> }>
+        </Route>
+        <Route path="/contacts" element={ <Contacts/> }>
         </Route>
       </Routes>
     </BrowserRouter>
