@@ -1,8 +1,10 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import pic from './sample-profile.png'
 import { Link, Route, useNavigate, useLocation } from "react-router-dom";
-import { Button, Card, Col, Container, Form, ListGroup, Nav, Row, Modal } from "react-bootstrap";
+import { Button, Image, Card, Col, Container, Form, ListGroup, Nav, Row, Modal } from "react-bootstrap";
 import TaskContainer from "../Components/TaskContainer"
+import { toBeRequired } from "@testing-library/jest-dom/dist/matchers";
 
 
 
@@ -149,9 +151,10 @@ function Home(props){
             <>
                 <Container fluid="lg" className="bg-white rounded mt-5 h-75">
                     <Row className="d-flex justify-content-between mt-4">
-
                         <Col className="col-2 mt-3 p-3 text-center">
+
                             <h4 className="text-dark">
+                                <img src={pic} className="roundedCircle" />
                                 Welcome, User
                             </h4>
                         </Col>
