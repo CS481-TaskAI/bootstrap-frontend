@@ -152,12 +152,6 @@ function Contacts(props)
                             <Form.Control type="search" placeholder="Search for contact"/>
                         </Form.Group>
                     </Col>
-
-                    <Col className="flex-column col-4">
-                        <Form.Select>
-                            <option> Select Filter</option>
-                        </Form.Select>
-                    </Col>
                 </Row>
 
                 <Row>
