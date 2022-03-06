@@ -1,6 +1,5 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import pic from './public/sample-profile.png'
 import { Link, Route, useNavigate, useLocation } from "react-router-dom";
 import { Button, Image, Card, Col, Container, Form, ListGroup, Nav, Row, Modal } from "react-bootstrap";
 import TaskContainer from "../Components/TaskContainer"
