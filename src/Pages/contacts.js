@@ -1,11 +1,64 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Form, Container, Row, Col, Nav, Button } from "react-bootstrap";
+import { useState } from "react";
+import { Form, Container, Row, Col, Nav, Button, Modal } from "react-bootstrap";
+
+
+function ContactModal(props)
+{
+    return(
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Add Contact
+                </Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <Container>
+                    <Row className="mb-3">
+                        <Form.Group className="mb-3" controlId="inputForm.ControlInput1">
+                            <Form.Control size="lg" type="input" placeholder="Full Name" />
+                        </Form.Group>
+                    </Row>
+                    <Row className="mb-2">
+                        <Form.Group className="mb-3" controlId="inputForm.ControlInput2">
+                            <Form.Control size="lg" type="input" placeholder="Email" />
+                        </Form.Group>
+                    </Row>
+                    <Row className="mb-2">
+                        <Form.Group className="mb-3" controlId="inputForm.ControlInput3">
+                            <Form.Control size="lg" type="input" placeholder="Organization" />
+                        </Form.Group>
+                    </Row>
+                    <Row className="mb-2">
+                        <Form.Group className="mb-3" controlId="inputForm.ControlInput4">
+                            <Form.Control size="lg" type="input" placeholder="Role" />
+                        </Form.Group>
+                    </Row>
+                </Container>
+            </Modal.Body>
+            
+            <Modal.Footer>
+                <Button variant="secondary" onClick={props.onHide}>Close</Button>
+                <Button> Submit</Button>
+            </Modal.Footer>
+            
+        </Modal>
+    );
+}
 
 
 function Contacts(props)
 {
+    const [contactModal, setContactModal] = useState(false);
     return(
+        
         <>
             <Container fluid="lg" className="bg-white rounded mt-5 h-75">
                 <Row className="d-flex justify-content-between mt-4">
@@ -43,9 +96,16 @@ function Contacts(props)
 
                 <Row className="d-sm-flex p-3">
                     <Col className="flex-column col-2">
-                        <Button className="rounded-pill">
+                        <Button className="rounded-pill" onClick={() => setContactModal(true)}>
                             Add Contact
                         </Button>
+
+                        <ContactModal
+                        show={contactModal}
+                        onHide={() => setContactModal(false)}
+                        />
+
+                        
                     </Col>
 
                     <Col className="flex-column col-4">
