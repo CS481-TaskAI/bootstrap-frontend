@@ -69,7 +69,7 @@ function Projects()
                     <Container className="ms-3">
                         <Row className="row-cols-3 col-6 ms-2">
                             <Button className="shadow text-dark bg-white border-white rounded" size="lg">
-                                Create Project
+                                Create New Project
                             </Button>
                         </Row>
                     </Container>
