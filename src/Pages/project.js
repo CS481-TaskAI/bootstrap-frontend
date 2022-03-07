@@ -11,7 +11,7 @@ function Projects()
     return(
         <>
             <Container fluid="lg" className="bg-white rounded mt-5 h-75">
-                <Row className="d-flex justify-content-between mt-4">
+                <Row className="d-flex justify-content-between mt-4 ms-3">
                     <Col className="col-2 mt-3 p-3 text-center">
                         <span>
                             <h4 className="text-dark">
@@ -45,25 +45,40 @@ function Projects()
 
                 </Row>
 
-                <Row className="d-inline-flex justify-content-between mt-2">
+                <Row className="d-inline-flex p-3 ms-3">
 
-                        <Col className="col-2 text-center">
+                        <Col className="text-center">
                             <h6 className="text-body">
                                 Today: 
                             </h6>
                         </Col>
 
-                    </Row>
+                </Row>
 
+                <Row className="d-flex p-3 ms-3">
 
+                        <Col className="text-start">
+                            <h2 className="text-body">
+                                Project Overview 
+                            </h2>
+                        </Col>
 
+                </Row>
 
-
-
-
+                <Row>
+                    <Container className="ms-3">
+                        <Row className="row-cols-3 col-6 ms-2">
+                            <Button className="shadow text-dark bg-white border-white rounded" size="lg">
+                                Create Project
+                            </Button>
+                        </Row>
+                    </Container>
+                </Row>
             </Container>
         
         
         </>
     );
 }
+
+export default Projects;

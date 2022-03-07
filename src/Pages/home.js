@@ -154,7 +154,7 @@ function Home(props){
         return(
             <>
                 <Container fluid="lg" className="bg-white rounded mt-5 h-75">
-                    <Row className="d-flex justify-content-between mt-4">
+                    <Row className="d-flex justify-content-between mt-4 ms-3">
                         <Col className="col-2 mt-3 p-3 text-center">
                             <span>
                                 
@@ -181,7 +181,7 @@ function Home(props){
                                     <Nav.Link className="text-secondary active" aria-current="page" href="/home">Home</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/projects">Projects</Nav.Link>
+                                    <Nav.Link className="text-dark" href="/project">Projects</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link className="text-dark" href="/contacts">Contacts</Nav.Link>
@@ -194,7 +194,7 @@ function Home(props){
 
                     </Row>
     
-                    <Row className="d-flex justify-content-start mt-2">
+                    <Row className="d-inline-flex p-3 ms-3">
 
                         <Col className="col-2 text-center">
                             <h6 className="text-body">
@@ -204,7 +204,7 @@ function Home(props){
 
                     </Row>
     
-                    <Row className="d-sm-flex p-3">
+                    <Row className="d-sm-flex p-3 ms-3">
 
                         <Col className="d-grid flex-column col-5">
                             <Button className="bg-light text-dark border border-secondary btn-sm rounded-pill" onClick={() => setTaskModal(true)}>
@@ -236,11 +236,11 @@ function Home(props){
 
                     </Row>
     
-                    <Row className="d-flex justify-content-start mt-2 p-3">
+                    <Row className="d-inline-flex p-3 ms-3">
 
-                        <Col className="col-3 text-center">
+                        <Col className="text-center">
                             <h2 className="text-body">
-                                Task Overview
+                                Task Overview 
                             </h2>
                         </Col>
 
