@@ -1,7 +1,9 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState } from "react";
+import { Link, Route, useNavigate, useLocation } from "react-router-dom";
 import { Form, Container, Row, Col, Nav, Button, Modal } from "react-bootstrap";
+import TaskContainer from "../Components/TaskContainer"
 
 
 function ProjectModal(props)
@@ -73,11 +75,13 @@ function TeamModal(props)
 
 }
 
-function Projects()
+function Projects(props)
 {
 
     const [projectModal, setProjectModal] = useState(false);
     const [teamModal, setTeamModal] = useState(false);
+    let user = location.state.user
+
     return(
         <>
             <Container fluid="lg" className="bg-white shadow rounded mt-5 h-75">
@@ -85,7 +89,7 @@ function Projects()
                     <Col className="col-2 mt-3 p-3 text-center">
                         <span>
                             <h4 className="text-dark">
-                                User
+                                Welcome, {user.username}
                             </h4>
                         </span> 
                     </Col>
@@ -102,18 +106,35 @@ function Projects()
                     </Col>
 
                     <Col className="mt-3 p-3 text-center">
-                            <Nav>
+                    <Nav>
                                 <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/home">Home</Nav.Link>
+                                    <Nav.Link 
+                                    className="text-dark" 
+                                    aria-current="page" 
+                                    as={Link}
+                                    to="/home"
+                                    state={{user}}>Home</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link className="text-secondary active" aria-current="page" href="/projects">Projects</Nav.Link>
+                                    <Nav.Link 
+                                    className="text-secondary active" 
+                                    as={Link}
+                                    to="/projects"
+                                    state={{user}}>Projects</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/contacts">Contacts</Nav.Link>
+                                    <Nav.Link 
+                                    className="text-dark" 
+                                    as={Link}
+                                    to="/contacts"
+                                    state={{user}}> Contacts </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/accountInfo">Account Info</Nav.Link>
+                                    <Nav.Link 
+                                    className="text-dark" 
+                                    as={Link}
+                                    to="/accountInfo"
+                                    state={{user}}>Account Info</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Col>
@@ -155,7 +176,8 @@ function Projects()
                     </Container>
                 </Row>
             </Container>
-        
+
+            <TaskContainer user_id={user.id}/>
         
         </>
     );
