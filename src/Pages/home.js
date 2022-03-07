@@ -36,6 +36,12 @@ function TaskModal(props)
                         <Col>
                             <Form.Select >
                                 <option>Select Priority</option>
+                                <option className="text-danger">Priority 1</option>
+                                <option className="text-warning">Priority 2</option>
+                                <option className="text-success">Priority 3</option>
+                                <option className="text-primary">Priority 4</option>
+                                <option className="text-secondary">No Priority</option>
+
                             </Form.Select>
                         </Col>
                     </Row>
