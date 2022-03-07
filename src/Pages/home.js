@@ -73,7 +73,7 @@ function Home(props){
     */
         return(
             <>
-                <Container fluid="lg" className="bg-white rounded mt-5 h-75">
+                <Container fluid="lg" className="bg-white shadow rounded mt-5 h-75">
                     <Row className="d-flex justify-content-between mt-4">
 
                         <Col className="col-2 mt-3 p-3 text-center">
@@ -165,7 +165,7 @@ function Home(props){
                         </Col>
 
                     </Row>
-    
+
                     <Row className="d-flex justify-content-start mt-2 p-3">
 
                         <Col className="col-3 text-center">
@@ -175,7 +175,9 @@ function Home(props){
                         </Col>
 
                     </Row>
-    
+
+                    <TaskContainer user_id={user.id}/>
+
                     <Row className="justify-content-center ms-3">
 
                         <Container>
