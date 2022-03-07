@@ -216,7 +216,7 @@ function Home(props){
                         </Col>
 
                     </Row>
-    
+
                     <Row className="d-flex justify-content-start mt-2 p-3">
 
                         <Col className="col-3 text-center">
@@ -226,7 +226,9 @@ function Home(props){
                         </Col>
 
                     </Row>
-    
+
+                    <TaskContainer user_id={user.id}/>
+
                     <Row className="justify-content-center ms-3">
 
                         <Container>
