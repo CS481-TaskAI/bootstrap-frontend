@@ -39,7 +39,7 @@ function Login(){
     function goHome(info){
         console.log("before navigating to home, ")
         console.log(info)
-        navigate('/home', {state:info})
+        navigate('/home', {state:{user:info}})
     }
 
     function validateForm(){

@@ -98,20 +98,24 @@ function Home(props){
     const [taskModal, setTaskModal] = React.useState(false);
     const [categoryModal, setCategoryModal] = React.useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
+    let user = location.state.user
+    console.log("Home initialization")
+    console.log(user)
     /*
         HOW TO ACCESS THE VALUES OF THE USER
 
-        location.state.*
+        user.*
         
         USER HAS THE FOLLOWING VALUES
 
         username, email, id, bio
 
-        EXAMPLE: location.state.username
+        EXAMPLE: user.username
+
+        
 
     */
-
-
         return(
             <>
                 <Container fluid="lg" className="bg-white rounded mt-5 h-75">
@@ -119,7 +123,7 @@ function Home(props){
 
                         <Col className="col-2 mt-3 p-3 text-center">
                             <h4 className="text-dark">
-                                Welcome, User
+                                Welcome, {user.username}
                             </h4>
                         </Col>
 
@@ -132,16 +136,33 @@ function Home(props){
                         <Col className="mt-3 p-3 text-center">
                             <Nav>
                                 <Nav.Item>
-                                    <Nav.Link className="text-secondary active" aria-current="page" href="/home">Home</Nav.Link>
+                                    <Nav.Link 
+                                    className="text-secondary active" 
+                                    aria-current="page" 
+                                    as={Link}
+                                    to="/home"
+                                    state={{user}}>Home</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/projects">Projects</Nav.Link>
+                                    <Nav.Link 
+                                    className="text-dark" 
+                                    as={Link}
+                                    to="/projects"
+                                    state={{user}}>Projects</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/contacts">Contacts</Nav.Link>
+                                    <Nav.Link 
+                                    className="text-dark" 
+                                    as={Link}
+                                    to="/contacts"
+                                    state={{user}}> Contacts </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/accountInfo">Account Info</Nav.Link>
+                                    <Nav.Link 
+                                    className="text-dark" 
+                                    as={Link}
+                                    to="/accountInfo"
+                                    state={{user}}>Account Info</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Col>

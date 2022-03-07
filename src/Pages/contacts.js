@@ -1,6 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Form, Container, Row, Col, Nav, Button, Modal } from "react-bootstrap";
 
 
@@ -23,7 +24,7 @@ function ContactModal(props)
                 <Container>
                     <Row className="mb-3">
                         <Form.Group className="mb-3" controlId="inputForm.ControlInput1">
-                            <Form.Control size="lg" type="input" placeholder="Full Name" />
+                            <Form.Control size="lg" type="input" placeholder="User Name" />
                         </Form.Group>
                     </Row>
                     <Row className="mb-2">
@@ -91,6 +92,14 @@ function Contacts(props)
 {
     const [contactModal, setContactModal] = useState(false);
     const [teamModal, setTeamModal] = useState(false);
+    let location = useLocation();
+    let user = location.state.user
+    console.log("Contacts Page initialization")
+    console.log(user)
+    
+
+
+
     return(
         
         <>
@@ -99,7 +108,7 @@ function Contacts(props)
                     <Col className="col-2 mt-3 p-3 text-center">
                         <span>
                             <h4 className="text-dark">
-                                User
+                                {user.username} Contacts
                             </h4>
                         </span>
                     </Col>
@@ -116,21 +125,38 @@ function Contacts(props)
                     </Col>
 
                     <Col className="mt-3 p-3 text-center">
-                            <Nav>
-                                <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/home">Home</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/projects">Projects</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link className="text-secondary active" aria-current="page" href="/contacts">Contacts</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link className="text-dark" href="/accountInfo">Account Info</Nav.Link>
-                                </Nav.Item>
-                            </Nav>
-                        </Col>
+                        <Nav>
+                            <Nav.Item>
+                                <Nav.Link 
+                                className="text-dark" 
+                                as={Link}
+                                to="/home"
+                                state={{user}}>Home</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link 
+                                className="text-dark" 
+                                as={Link}
+                                to="/projects"
+                                state={{user}}>Projects</Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link 
+                                className="text-secondary active" 
+                                aria-current="page" 
+                                as={Link}
+                                to="/contacts"
+                                state={{user}}> Contacts </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item>
+                                <Nav.Link 
+                                className="text-dark" 
+                                as={Link}
+                                to="/accountInfo"
+                                state={{user}}>Account Info</Nav.Link>
+                            </Nav.Item>
+                        </Nav>
+                    </Col>
                 </Row>
 
                 <Row className="d-sm-flex p-3">
