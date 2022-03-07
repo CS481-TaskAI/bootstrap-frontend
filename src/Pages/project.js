@@ -4,10 +4,80 @@ import { useState } from "react";
 import { Form, Container, Row, Col, Nav, Button, Modal } from "react-bootstrap";
 
 
+function ProjectModal(props)
+{
+    return(
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Create Project
+                </Modal.Title>
+            </Modal.Header>
 
+            <Modal.Body>
+                <Container>
+                    <Row className="mb-3">
+                        <Form.Group className="mb-3" controlId="inputForm.ControlInput1">
+                            <Form.Control size="lg" type="input" placeholder="Project Name" />
+                        </Form.Group>
+                    </Row>
+                </Container>
+            </Modal.Body>
+            
+            <Modal.Footer>
+                <Button variant="secondary" onClick={props.onHide}>Close</Button>
+                <Button> Submit</Button>
+            </Modal.Footer>
+            
+        </Modal>
+    );
+}
+
+function TeamModal(props)
+{
+    return(
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Create a team/organization
+                </Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <Container>
+                    <Row className="mb-3">
+                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Control size="lg" type="text" placeholder="What is the name of your team/org?" />
+                        </Form.Group>
+                    </Row>
+                </Container>
+            </Modal.Body>
+
+            <Modal.Footer>
+                <Button variant="secondary" onClick={props.onHide}>Close</Button>
+                <Button> Submit</Button>
+            </Modal.Footer>
+
+        </Modal>
+    );
+
+}
 
 function Projects()
 {
+
+    const [projectModal, setProjectModal] = useState(false);
+    const [teamModal, setTeamModal] = useState(false);
     return(
         <>
             <Container fluid="lg" className="bg-white shadow rounded mt-5 h-75">
@@ -21,9 +91,14 @@ function Projects()
                     </Col>
 
                     <Col className="mt-3 p-3 text-center">
-                        <Button className="bg-light text-dark btn-sm border-dark rounded-pill">
+                        <Button className="bg-light text-dark btn-sm border-dark rounded-pill" onClick={() => setTeamModal(true)}>
                             Create Team
-                        </Button> 
+                        </Button>
+
+                        <TeamModal
+                            show={teamModal}
+                            onHide={() => setTeamModal(false)}
+                            /> 
                     </Col>
 
                     <Col className="mt-3 p-3 text-center">
@@ -71,6 +146,11 @@ function Projects()
                             <Button className="shadow text-dark bg-white border-white rounded" size="lg">
                                 Create New Project
                             </Button>
+
+                            <ProjectModal
+                                show={projectModal}
+                                onHide={() => setProjectModal(false)}
+                            />
                         </Row>
                     </Container>
                 </Row>
