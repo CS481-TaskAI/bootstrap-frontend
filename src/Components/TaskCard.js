@@ -11,13 +11,13 @@ function TaskCard(props) {
     useEffect(() => {
         function PriorityColor() {
             if(props.priority<=8){
-                setPriorityString("bg-danger");
+                setPriorityString("bg-danger text-white");
             }else if(props.priority>8 && props.priority<=15){
-                setPriorityString("bg-warning");
+                setPriorityString("bg-warning text-dark");
             }else if(props.priority>15 && props.priority<=23){
-                setPriorityString("bg-success");
+                setPriorityString("bg-success text-white");
             }else if(props.priority>23 && props.priority<=35){
-                setPriorityString("bg-primary");
+                setPriorityString("bg-primary text-white");
             }else{
                 setPriorityString("");
             }
@@ -30,10 +30,13 @@ function TaskCard(props) {
             <Card className="shadow-sm text-dark bg-white rounded">
                 
                 <Card.Body className={priorityString}>
-                    <Card.Text className="text-white">
+                    <Card.Text>
                         {props.description}
+                        <Button type="button" class="submit" aria-label="Close" className="btn btn-light justify-content-end">
+                            <span aria-hidden="true">&times;</span>
+                        </Button>
                     </Card.Text> 
-                    <Card.Text className="text-black">
+                    <Card.Text>
                         DUE: {props.date_due}
                     </Card.Text>  
                 </Card.Body>   
