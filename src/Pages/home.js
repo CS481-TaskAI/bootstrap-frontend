@@ -21,7 +21,7 @@ function TaskModal(props)
         >
             <Modal.Header>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Add task to a category
+                    Create Task
                 </Modal.Title>
             </Modal.Header>
 
