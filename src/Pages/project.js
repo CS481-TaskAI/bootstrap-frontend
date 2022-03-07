@@ -10,7 +10,7 @@ function Projects()
 {
     return(
         <>
-            <Container fluid="lg" className="bg-white rounded mt-5 h-75">
+            <Container fluid="lg" className="bg-white shadow rounded mt-5 h-75">
                 <Row className="d-flex justify-content-between mt-4 ms-3">
                     <Col className="col-2 mt-3 p-3 text-center">
                         <span>
