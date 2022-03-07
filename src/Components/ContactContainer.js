@@ -9,6 +9,7 @@ function ContactContainer(props) {
      // tasks is the variable, setTask is the setter method
     // Not used here, but tasks will be array of task objects
     const [contacts, setContacts] = useState([]);
+    
     let url = '/contacts'
     url += `?user_id=${props.user_id}]`
 
@@ -31,9 +32,11 @@ function ContactContainer(props) {
         getContacts();
       }, [props.user_id, url]); // Or [] if effect doesn't need props or state
               // userid will be passed here from props.
+    
+
 
     return (
-            <div>
+            <div key={props.force}>
                 {contacts.length > 0 &&
                     <div>  {/* Here we will create task cards in a for loop and pass them each a task object */}
                         {contacts.map((contact) =>(
