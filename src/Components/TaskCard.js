@@ -46,8 +46,13 @@ function TaskCard(props) {
         }
     }
 
+    function refreshPage(){
+        window.location.reload(false);
+    }
+
     function clickDelete(){
         deleteTask()
+        refreshPage()
     }
 
     return (

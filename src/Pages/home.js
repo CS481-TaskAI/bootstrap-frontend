@@ -124,16 +124,6 @@ function Home(props){
 
                     </Row>
     
-                    <Row className="d-flex justify-content-start mt-2">
-
-                        <Col className="col-2 text-center">
-                            <h6 className="text-body">
-                                Today: 
-                            </h6>
-                        </Col>
-
-                    </Row>
-    
                     <Row className="d-sm-flex p-3">
 
                         <Col className="d-grid flex-column col-5">

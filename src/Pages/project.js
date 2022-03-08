@@ -58,7 +58,7 @@ function Projects(props)
                     <Col className="col-2 mt-3 p-3 text-center">
                         <span>
                             <h4 className="text-dark">
-                                Welcome, {user.username}
+                                {user.username}'s Projects
                             </h4>
                         </span> 
                     </Col>
@@ -110,15 +110,6 @@ function Projects(props)
 
                 </Row>
 
-                <Row className="d-inline-flex p-3 ms-3">
-
-                        <Col className="text-center">
-                            <h6 className="text-body">
-                                Today: 
-                            </h6>
-                        </Col>
-
-                </Row>
 
                 <Row className="d-flex p-3 ms-3">
 
