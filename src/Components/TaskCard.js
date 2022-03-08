@@ -25,6 +25,31 @@ function TaskCard(props) {
         PriorityColor();
       }, [props.priority, priorityString]);
 
+    async function deleteTask(){
+
+        let data = {
+            "task_id": props.id
+        }
+
+        const response = await fetch('/mod_tasks', {
+            method: 'DELETE',
+            headers: {
+              'Accept': 'application/json',
+              'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data) 
+            }
+        );;
+        const json = await response.json();
+        if (json.hasOwnProperty('error')){
+            alert(json.error)
+        }
+    }
+
+    function clickDelete(){
+        deleteTask()
+    }
+
     return (
           <>
             <Card className="shadow-sm text-dark bg-white rounded">
@@ -36,7 +61,12 @@ function TaskCard(props) {
                                 {props.description}
                             </Col>
                             <Col className="justify-content-end">
-                                <Button type="button" class="submit" aria-label="Close" className="btn btn-light justify-content-end">
+                                <Button 
+                                type="button" 
+                                class="submit" 
+                                aria-label="Close" 
+                                className="btn btn-light justify-content-end"
+                                onClick={clickDelete}>
                                     <span aria-hidden="true">&times;</span>
                                 </Button>
                             </Col>
