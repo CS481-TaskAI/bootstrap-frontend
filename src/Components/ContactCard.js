@@ -14,6 +14,31 @@ function ContactCard(props) {
             props.bio
     */
 
+    async function deleteContact(){
+
+        let data = {
+            user_id: props.user_id,
+            contact_id: props.id
+        }
+
+        const response = await fetch('/mod_contacts', {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data) 
+            }
+        );;
+        const json = await response.json();
+        if (json.hasOwnProperty('error')){
+            alert(json.error)
+        }
+    }
+
+    function clickDelete(){
+        deleteContact()
+    }
 
     return (
           <>
@@ -21,6 +46,14 @@ function ContactCard(props) {
                 <Card.Body>
                     <Card.Text>
                         {props.username}
+                        <Button 
+                                type="button" 
+                                class="submit" 
+                                aria-label="Close" 
+                                className="btn btn-light justify-content-end"
+                                onClick={clickDelete}>
+                                    <span aria-hidden="true">&times;</span>
+                                </Button>
                     </Card.Text>    
                 </Card.Body>   
             </Card>  

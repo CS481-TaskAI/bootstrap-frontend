@@ -42,6 +42,7 @@ function ContactContainer(props) {
                         {contacts.map((contact) =>(
                             <div key={contact.id}>
                                 <ContactCard 
+                                    user_id={props.user_id}
                                     id={contact.id}
                                     username={contact.username}
                                     email={contact.email}
