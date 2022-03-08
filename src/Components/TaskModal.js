@@ -41,6 +41,10 @@ function TaskModal(props)
         }               
     }
 
+    function refreshPage(){
+        window.location.reload(false);
+    }
+
     function handleSubmit(){
         let data = {
             user_id: props.user_id,
@@ -53,6 +57,7 @@ function TaskModal(props)
         }
         console.log(data)
         tryAddTask()
+        refreshPage()
     }
 
     return(
