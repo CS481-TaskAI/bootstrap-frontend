@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link, Route, useNavigate, useLocation } from "react-router-dom";
 import { Form, Container, Row, Col, Nav, Button, Modal } from "react-bootstrap";
 import TaskContainer from "../Components/TaskContainer"
+import ProjectContainer from "../Components/ProjectContainer"
 
 
 function ProjectModal(props)
@@ -80,6 +81,7 @@ function Projects(props)
 
     const [projectModal, setProjectModal] = useState(false);
     const [teamModal, setTeamModal] = useState(false);
+    const location = useLocation();
     let user = location.state.user
 
     return(
@@ -175,9 +177,10 @@ function Projects(props)
                         </Row>
                     </Container>
                 </Row>
+                <ProjectContainer user_id={user.id}/>
             </Container>
 
-            <TaskContainer user_id={user.id}/>
+            
         
         </>
     );

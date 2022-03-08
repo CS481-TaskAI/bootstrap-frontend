@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Card, Col, Container, Form, ListGroup, Nav, Row } from "react-bootstrap";
 import {useState, useEffect} from 'react';
+import TaskContainer from './TaskContainer'
 
 
 function ProjectCard(props) {
@@ -11,6 +12,7 @@ function ProjectCard(props) {
             props.title
             props.description
             props.id
+            props.user_id
     */
     
 
@@ -20,6 +22,9 @@ function ProjectCard(props) {
                 <Card.Body>
                     <Card.Text>
                         {props.title}
+                        <TaskContainer 
+                        user_id={props.user_id}
+                        p_id={props.id} />
                     </Card.Text>    
                 </Card.Body>   
             </Card>  

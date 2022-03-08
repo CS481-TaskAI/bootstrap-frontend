@@ -38,6 +38,7 @@ function ProjectContainer(props) {
                         {projects.map((project) =>(
                             <div key={project.id}>
                                 <ProjectCard 
+                                    user_id={props.user_id}
                                     id={project.id}
                                     title={project.title}
                                     description={project.description}                              
