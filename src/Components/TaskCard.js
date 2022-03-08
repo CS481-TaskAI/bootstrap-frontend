@@ -31,10 +31,16 @@ function TaskCard(props) {
                 
                 <Card.Body className={priorityString}>
                     <Card.Text className="justify-content-between">
-                        {props.description}
-                        <Button type="button" class="submit" aria-label="Close" className="btn btn-light">
-                            <span aria-hidden="true">&times;</span>
-                        </Button>
+                        <Row>
+                            <Col style={{width: '90%'}}>
+                                {props.description}
+                            </Col>
+                            <Col className="justify-content-end">
+                                <Button type="button" class="submit" aria-label="Close" className="btn btn-light justify-content-end">
+                                    <span aria-hidden="true">&times;</span>
+                                </Button>
+                            </Col>
+                        </Row>
                     </Card.Text> 
                     <Card.Text>
                         DUE: {props.date_due}
