@@ -9,6 +9,7 @@ function ProjectContainer(props) {
      // tasks is the variable, setTask is the setter method
     // Not used here, but tasks will be array of task objects
     const [projects, setProjects] = useState([]);
+    
     let url = '/projects'
     url += `?user_id=${props.user_id}`
 
@@ -39,7 +40,7 @@ function ProjectContainer(props) {
                             <div key={project.id}>
                                 <ProjectCard 
                                     user_id={props.user_id}
-                                    id={project.id}
+                                    p_id={project.id}
                                     title={project.title}
                                     description={project.description}                              
                                 />

@@ -5,41 +5,8 @@ import { Link, Route, useNavigate, useLocation } from "react-router-dom";
 import { Form, Container, Row, Col, Nav, Button, Modal } from "react-bootstrap";
 import TaskContainer from "../Components/TaskContainer"
 import ProjectContainer from "../Components/ProjectContainer"
+import ProjectModal from "../Components/ProjectModal"
 
-
-function ProjectModal(props)
-{
-    return(
-        <Modal
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
-            <Modal.Header>
-                <Modal.Title id="contained-modal-title-vcenter">
-                    Create Project
-                </Modal.Title>
-            </Modal.Header>
-
-            <Modal.Body>
-                <Container>
-                    <Row className="mb-3">
-                        <Form.Group className="mb-3" controlId="inputForm.ControlInput1">
-                            <Form.Control size="lg" type="input" placeholder="Project Name" />
-                        </Form.Group>
-                    </Row>
-                </Container>
-            </Modal.Body>
-            
-            <Modal.Footer>
-                <Button variant="secondary" onClick={props.onHide}>Close</Button>
-                <Button> Submit</Button>
-            </Modal.Footer>
-            
-        </Modal>
-    );
-}
 
 function TeamModal(props)
 {
@@ -108,7 +75,7 @@ function Projects(props)
                     </Col>
 
                     <Col className="mt-3 p-3 text-center">
-                    <Nav>
+                        <Nav>
                                 <Nav.Item>
                                     <Nav.Link 
                                     className="text-dark" 
@@ -159,6 +126,7 @@ function Projects(props)
                             <h2 className="text-body">
                                 Project Overview 
                             </h2>
+
                         </Col>
 
                 </Row>
@@ -166,11 +134,15 @@ function Projects(props)
                 <Row>
                     <Container className="ms-3">
                         <Row className="row-cols-3 col-6 ms-2">
-                            <Button className="shadow text-dark bg-white border-white rounded" size="lg">
+                            <Button 
+                            className="shadow text-dark bg-white border-white rounded" 
+                            size="lg"
+                            onClick={() => setProjectModal(true)}>
                                 Create New Project
                             </Button>
 
                             <ProjectModal
+                                user_id={user.id}
                                 show={projectModal}
                                 onHide={() => setProjectModal(false)}
                             />

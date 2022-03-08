@@ -17,7 +17,7 @@ function TaskModal(props)
 
         let data = {
             user_id: props.user_id,
-            project_id: 1,
+            project_id: props.p_id,
             description: description,
             date_due: due,
             classification: classification,
@@ -34,7 +34,7 @@ function TaskModal(props)
                 body: JSON.stringify(data)
         });;
         const json = await response.json();
-        console.log('this is from Login');
+        console.log('this is from TaskModal');
         console.log(json);
         if (json.hasOwnProperty('error')){
             alert(json.error)
@@ -52,6 +52,7 @@ function TaskModal(props)
             priority: priority
         }
         console.log(data)
+        tryAddTask()
     }
 
     return(
@@ -63,7 +64,7 @@ function TaskModal(props)
         >
             <Modal.Header>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    Create Task
+                    Create Task for {props.p_title}
                 </Modal.Title>
             </Modal.Header>
 
@@ -114,12 +115,12 @@ function TaskModal(props)
                                         <option >Logistics</option>
                                         <option >Communication</option>
                                         <option >Process</option>
-
                                     </Form.Select>
                                 </Form.Group>
                             </Col>
+                        
                         </Row>
-
+                        
                         <Row>
                             <Form.Group className="mb-3" controlId="description">
                                 <Form.Label>Description</Form.Label>
@@ -130,6 +131,16 @@ function TaskModal(props)
                                 rows={3}
                                 onChange={(e) => setDescription(e.target.value)}/>
                             </Form.Group>
+                            <Col   >
+                            <Form.Group  controlId="due">
+                                    <Form.Label>Due Date</Form.Label>
+                                    <Form.Control 
+                                    type="due"
+                                    value={due}
+                                    placeholder="YYYY-MM-DD"
+                                    onChange={(e) => setDue(e.target.value)}/>
+                                </Form.Group>
+                                </Col>
                         </Row>
                     </Form>
                 </Container>
