@@ -28,7 +28,7 @@ function ProjectContainer(props) {
             setProjects(json);
         }
         getProjects();
-      }, [props.user_id, url]); // Or [] if effect doesn't need props or state
+      }, [url]); // Or [] if effect doesn't need props or state
               // userid will be passed here from props.
 
     return (

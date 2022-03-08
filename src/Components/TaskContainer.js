@@ -37,8 +37,10 @@ function TaskContainer(props) {
             setTasks(json);
         }
         getTasks();
-      }, [props.user_id, props.p_id, url]); // Or [] if effect doesn't need props or state
+      }, [url]); // Or [] if effect doesn't need props or state
               // userid will be passed here from props.
+
+    
 
     return (
             <div>
