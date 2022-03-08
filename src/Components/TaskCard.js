@@ -30,9 +30,9 @@ function TaskCard(props) {
             <Card className="shadow-sm text-dark bg-white rounded">
                 
                 <Card.Body className={priorityString}>
-                    <Card.Text>
+                    <Card.Text className="justify-content-between">
                         {props.description}
-                        <Button type="button" class="submit" aria-label="Close" className="btn btn-light justify-content-end">
+                        <Button type="button" class="submit" aria-label="Close" className="btn btn-light">
                             <span aria-hidden="true">&times;</span>
                         </Button>
                     </Card.Text> 

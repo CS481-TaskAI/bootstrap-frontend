@@ -32,11 +32,15 @@ function ContactModal(props)
         }               
     }
 
+    function refreshPage(){
+        window.location.reload(false);
+    }
+
     function handleSubmit(event)
     {
         console.log(props.user_id)
         tryAddContact()
-        
+        refreshPage()
     }
 
     return(
