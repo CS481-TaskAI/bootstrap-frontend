@@ -114,10 +114,10 @@ function Home(props){
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link 
-                                    className="text-dark" 
+                                    className="text-danger" 
                                     as={Link}
-                                    to="/accountInfo"
-                                    state={{user}}>Account Info</Nav.Link>
+                                    to="/"
+                                    state={{user}}>Logout</Nav.Link>
                                 </Nav.Item>
                             </Nav>
                         </Col>
@@ -177,37 +177,6 @@ function Home(props){
                     </Row>
 
                     <TaskContainer user_id={user.id}/>
-
-                    <Row className="justify-content-center ms-3">
-
-                        <Container>
-
-                            <Row className="mb-3">
-
-                                <Col className="col-3">
-
-                                    <Card className="shadow-sm text-dark bg-white rounded">
-                                        <Card.Body>
-                                            <Card.Title className="text-center">To Do</Card.Title>
-                                                <Card.Text>
-                                                    <ListGroup>
-                                                        <ListGroup.Item>
-                                                            Create tasks
-                                                        </ListGroup.Item>
-                                                        <ListGroup.Item>
-                                                            Create tasks in different categories
-                                                        </ListGroup.Item>
-                                                    </ListGroup>
-                                                </Card.Text>    
-                                        </Card.Body>   
-                                    </Card>
-
-                                </Col>
-
-                            </Row>
-
-                        </Container>
-                    </Row>
 
                 </Container>
             </>

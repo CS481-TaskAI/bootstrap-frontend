@@ -109,10 +109,10 @@ function Contacts(props)
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link 
-                                className="text-dark" 
+                                className="text-danger" 
                                 as={Link}
-                                to="/accountInfo"
-                                state={{user}}>Account Info</Nav.Link>
+                                to="/"
+                                state={{user}}>Logout</Nav.Link>
                             </Nav.Item>
                         </Nav>
                     </Col>
