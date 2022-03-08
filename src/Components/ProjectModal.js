@@ -37,8 +37,13 @@ function ProjectModal(props)
         }               
     }
 
+    function refreshPage(){
+        window.location.reload(false);
+    }
+
     function handleSubmit(){
         tryAddProject()
+        refreshPage()
     }
     
 
