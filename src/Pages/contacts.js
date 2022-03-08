@@ -67,7 +67,7 @@ function Contacts(props)
                     <Col className="col-2 mt-3 p-3 text-center">
                         <span>
                             <h4 className="text-dark">
-                                {user.username} Contacts
+                                {user.username}'s Contacts
                             </h4>
                         </span>
                     </Col>
